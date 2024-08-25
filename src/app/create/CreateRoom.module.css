@@ -1,0 +1,25 @@
+.inputStyle {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 350px;
+}
+
+.buttonStyle {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 150px;
+  background-color: #0000ba;
+}
+
+.alternateTxt {
+  font-size: 8px;
+  font-style: italic;
+}
+
+.alternateTxt>a {
+  text-decoration: underline;
+  color: #00ba00;
+  cursor: pointer;
+}

@@ -1,0 +1,66 @@
+.playerContainer {
+  padding: 10px;
+  background: #333333;
+  height: 500px;
+  min-width: 270px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+  position: relative;
+}
+
+.btnStyle {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  background-color: #9C27B0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.ctrlBtnArea {
+  display: flex;
+  height: 500px;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.ctrlBtnArea button {
+  padding: 10px;
+  border-radius: 30px;
+  width: 80%;
+  cursor: pointer;
+}
+
+.ctrlBtnArea ul {
+  font-size: 8px;
+  font-style: italic;
+}
+
+.nameStyle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 70%;
+  display: inline-block;
+}
+
+.chatInfo {
+  font-size: 8px;
+  font-style: italic;
+  background: #333333;
+  padding: 3px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.pointTbl th,
+.pointTbl td {
+  padding: 5px;
+}

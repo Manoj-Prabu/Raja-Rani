@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { SocketProvider } from './context/SocketContext';
+import Game from "./Game";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className} style={{ height: "100vh" }}>
+        <SocketProvider>
+          <Game>
+            {children}
+          </Game>
+        </SocketProvider>
+      </body>
     </html>
   );
 }
