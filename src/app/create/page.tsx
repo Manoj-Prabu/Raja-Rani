@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import styles from './CreateRoom.module.css';
 import { useGameContext } from '../context/ContextProvider';
 import { useSocket } from '../context/SocketContext';
@@ -9,12 +9,17 @@ function CreateRoom() {
   const { socket } = useSocket();
   const { props }: any = useGameContext();
   const { setInitPage, setMessage } = props;
-  const hostNameRef = useRef('');
+  
+  // Specify the type as HTMLInputElement | null
+  const hostNameRef = useRef<HTMLInputElement | null>(null);
 
   const createRoom = () => {
-    if (hostNameRef.current?.value)
-      socket?.emit('create', { name: hostNameRef.current?.value });
-    else setMessage('Error: Please provide name');
+    const input = hostNameRef.current;
+    if (input && input.value) {
+      socket?.emit('create', { name: input.value });
+    } else {
+      setMessage('Error: Please provide name');
+    }
   };
 
   return (
@@ -31,7 +36,7 @@ function CreateRoom() {
       <br />
       <p className={styles.alternateTxt}>Already created room? <a onClick={() => { setInitPage('join') }}>Join room</a></p>
     </div>
-  )
+  );
 }
 
-export default CreateRoom
+export default CreateRoom;
