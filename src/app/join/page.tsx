@@ -9,8 +9,8 @@ function JoinRoom() {
   const { socket } = useSocket();
   const { props }: any = useGameContext();
   const { setInitPage, setMessage } = props;
-  const roomIdRef = useRef('');
-  const nameRef = useRef('');
+  const roomIdRef = useRef<HTMLInputElement | null>(null);
+  const nameRef = useRef<HTMLInputElement | null>(null);
 
   const joinRoom = () => {
     if (roomIdRef.current?.value && nameRef.current?.value)

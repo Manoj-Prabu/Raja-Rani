@@ -16,7 +16,7 @@ export default function Room() {
   const { props }: any = useGameContext();
   const { roomId, playerName, players, activePlayer, setActivePlayer, chats, setMessage } = props;
   const [started, setStarted] = useState(false);
-  const msgRef = useRef<HTMLInputElement>(null);
+  const msgRef = useRef<HTMLInputElement | null>(null);
   const charIcon = { King: '🤴🏻', Queen: '👸🏻', Minister: '👮🏻', Police: '💂🏻', Thief: '🥷🏻' };
   const [end, setEnd] = useState(false);
 
