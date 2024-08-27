@@ -174,6 +174,7 @@ export default function Room() {
           {!started && <div style={{ position: 'absolute', top: '10px', left: '10px', right: '10px', textAlign: 'center' }}>Start the game and assign the characters to the playes by clicking <code>Assign char</code> button</div>}
           {started && <div style={{ position: 'absolute', top: '10px', left: '10px', right: '10px', textAlign: 'center' }}>{activePlayer.name} is the {activePlayer.char}</div>}
           {players.map((player: { name: string, char: string, point: string }, index: number) => <div key={player.name}>
+            {playerName === player.name && <span title={`You are the ${player.char}`}>{charIcon[player.char as keyof typeof charIcon]}</span>}
             <button className={styles.btnStyle} onClick={() => { activePlayer.name === playerName && playerName !== player.name && onGuess({ name: player.name, char: player.char }) }}>
               {playerName === player.name && <span title='You' style={{ float: "left" }}>🫵🏻</span>}
               <span className={styles.nameStyle}>{player.name}</span>
